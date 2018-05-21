@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-int *arrayOfElements;
-    int nElements = 0;
+
 void bubbleSort(int *arrayOfElements, int nElements){
     int auxiliar;
     for(int i = 0; i < nElements; i++){
@@ -19,19 +18,20 @@ void bubbleSort(int *arrayOfElements, int nElements){
 }
 
 int main(){
+    int nElements;
     cout << "Enter the array size: " << flush;
     cin >> nElements;
-    arrayOfElements = new int[nElements];
+    int arrayOfElements[nElements] = {};
 
     for(int i = 0; i < nElements; i++){
         cout << "Element[" << i << "]: " << flush;
         cin >> *(arrayOfElements+i);
     }
 
-    /*for(int i = 0; i < nElements; i++){
+    for(int i = 0; i < nElements; i++){
         cout << arrayOfElements[i] << flush;
-    }*/
+    }
 
-    //bubbleSort(arrayOfElements, nElements);
+    bubbleSort(arrayOfElements, nElements);
     return 0;
 }
