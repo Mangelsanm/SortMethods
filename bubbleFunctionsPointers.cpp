@@ -6,10 +6,10 @@ void bubbleSort(int *arrayOfElements, int nElements){
     int auxiliar;
     for(int i = 0; i < nElements; i++){
         for(int j = 0; j < nElements - 1; j++){
-            if((arrayOfElements[j]) > (arrayOfElements[j+1])){
-                auxiliar = (arrayOfElements[j]);
-                (arrayOfElements[j]) = (arrayOfElements[j+1]);
-                (arrayOfElements[j+1]) = auxiliar;
+            if(*(arrayOfElements+j) > *(arrayOfElements+j+1)){
+                auxiliar = *(arrayOfElements+j);
+                *(arrayOfElements+j) = *(arrayOfElements+j+1);
+                *(arrayOfElements+j+1) = auxiliar;
             }
         }
     }
