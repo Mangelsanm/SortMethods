@@ -23,10 +23,12 @@ int *getValues(){
         cout << "Element[" << i << "]: " << flush;
         cin >> *(arrayOfElements+i);
     }
-
+    cout << "Original Array" << endl;
+    cout << "[" << flush;
     for(int i = 0; i < nElements; i++){
-        cout << arrayOfElements[i] << flush;
+        cout << arrayOfElements[i] << ", " << flush;
     }
+    cout << "]" << endl;
     return arrayOfElements;
 }
 
@@ -45,8 +47,11 @@ int *bubbleSort(int *arrayOfElements, int nElements){
 }
 
 void printArray(int *arrayOfElements, int nElements){
+    cout << "Sorted Array" << endl;
+    cout << "[" << flush;
     for(int i = 0; i < nElements; i++){
-        cout << arrayOfElements[i] << flush;
+        cout << arrayOfElements[i] << ", " << flush;
     }
+    cout << "]" << endl;
     delete[] arrayOfElements;
 }
