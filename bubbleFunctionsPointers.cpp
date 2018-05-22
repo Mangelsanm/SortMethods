@@ -2,12 +2,14 @@
 using namespace std;
 
 int *getValues();
-void bubbleSort(int *, int);
+int *bubbleSort(int *, int);
+void printArray(int *, int);
 
 int main(){
     int *pElements;
     pElements = getValues();
-    bubbleSort(pElements, 3);
+    pElements = bubbleSort(pElements, 3);
+    printArray(pElements, 3);
     return 0;
 }
 
@@ -28,7 +30,7 @@ int *getValues(){
     return arrayOfElements;
 }
 
-void bubbleSort(int *arrayOfElements, int nElements){
+int *bubbleSort(int *arrayOfElements, int nElements){
     int auxiliar;
     for(int i = 0; i < nElements; i++){
         for(int j = 0; j < nElements - 1; j++){
@@ -39,6 +41,10 @@ void bubbleSort(int *arrayOfElements, int nElements){
             }
         }
     }
+    return arrayOfElements;
+}
+
+void printArray(int *arrayOfElements, int nElements){
     for(int i = 0; i < nElements; i++){
         cout << arrayOfElements[i] << flush;
     }
