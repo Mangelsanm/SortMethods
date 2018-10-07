@@ -1,3 +1,6 @@
+// Miguel Mares, mares112358@gmail.com
+// metodo de ordenamiento: Burbuja bidireccional
+
 #include <iostream>
 using namespace std;
 
@@ -17,28 +20,32 @@ int main(){
     }
 
 /* inicia metodo de ordenamiento */
+
     // valores de los indices iniciales
     int izquierda = 0;
     int derecha = nElementos - 1;
+    int auxiliar = 0;
+
     // en este punto se sabe cuando los indices se cruzan y termina el ciclo
     while(izquierda <= derecha){
         // ciclo for para colocar los numeros mas grandes al final del arreglo
         for(int j = izquierda; j < derecha; j++){
             if(Elements[j] > Elements[j+1]){
-                int aux = Elements[j];
+                auxiliar = Elements[j];
                 Elements[j] = Elements[j+1];
-                Elements[j+1] = aux;
+                Elements[j+1] = auxiliar;
             }
         }
 
         // ciclo for para colocar los numeros mas pequeños al inicio del arreglo
         for(int k = derecha; k > izquierda; k--){
             if(Elements[k] < Elements[k-1]){
-                int aux = Elements[k];
+                auxiliar = Elements[k];
                 Elements[k] = Elements[k-1];
-                Elements[k-1] = aux;
+                Elements[k-1] = auxiliar;
             }
         }
+
         // disminuimos y aumentamos los idices inferior y superior para no volver
         // a repasar todo el arreglo, ya que los valores extremos se van acomodando
         // en su lugar correcto al terminar cada uno de los ciclos anteriores
